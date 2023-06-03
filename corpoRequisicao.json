@@ -1,3 +1,24 @@
 {
-  "vector": "CVSS:3.0/AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:H/E:P/RL:W/RC:R/CR:M/IR:H/AR:M/MAV:L/MAC:H/MPR:L/MUI:N/MS:C/MC:L/MI:L/MA:L"
+  "attackVector": "A",
+  "attackComplexity": "H",
+  "privilegesRequired": "L",
+  "userInteraction": "R",
+  "scope": "C",
+  "confidentiality": "H",
+  "integrity": "H",
+  "availability": "H",
+  "exploitCodeMaturity": "H",
+  "remediationLevel": "W",
+  "reportConfidence": "C",
+  "confidentialityRequirement": "H",
+  "integrityRequirement": "H",
+  "availabilityRequirement": "H",
+  "modifiedAttackVector": "N",
+  "modifiedAttackComplexity": "L",
+  "modifiedPrivilegesRequired": "L",
+  "modifiedUserInteraction": "R",
+  "modifiedScope": "C",
+  "modifiedConfidentiality": "L",
+  "modifiedIntegrity": "L",
+  "modifiedAvailability": "L"
 }

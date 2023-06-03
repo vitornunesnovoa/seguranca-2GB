@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from cvss import CVSS3
-
+from json_to_string import json_to_cvss_string
 app = Flask(__name__)
 
 @app.route('/calculate-cvss', methods=['GET'])
@@ -8,7 +8,7 @@ def calculate_cvss():
     # Carrega o json informado na requisição
     data = request.json
     # Move o valor da chave "vector" do json informado na requisição
-    vector = data.get("vector")
+    vector = json_to_cvss_string(data)
     # Instancia o objeto CVSS3 com o valor do vector
     metrics = CVSS3(vector)
     # Realiza o cálculo das pontuações(scores)
