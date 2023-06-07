@@ -1,7 +1,5 @@
 precisa instalar as bibliotecas flask e cvss
 
-pip instalcd l cvss flask
+pip install cvss flask  pyopenssl
 
 python cvss_api.py
-
-pip install pyopenssl
