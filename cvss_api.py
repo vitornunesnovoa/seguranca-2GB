@@ -3,7 +3,7 @@ from cvss import CVSS3
 from json_to_string import json_to_cvss_string
 app = Flask(__name__)
 
-@app.route('/calculate-cvss', methods=['GET'])
+@app.route('/calculate-cvss', methods=['POST'])
 def calculate_cvss():
     # Carrega o json informado na requisição
     data = request.json
@@ -20,12 +20,12 @@ def calculate_cvss():
     # severities = ("Medium", "Medium", "Medium")
     severities = metrics.severities()
     result = {
-        "base_score": scores[0],
-        "temporal_score": scores[1],
-        "environmental_score": scores[2],
-        "base_severity": severities[0],
-        "temporal_severity": severities[1],
-        "environmental_severity": severities[2],
+        "baseScore": scores[0],
+        "temporalScore": scores[1],
+        "environmentalScore": scores[2],
+        "baseSeverity": severities[0],
+        "temporalSeverity": severities[1],
+        "environmentalSeverity": severities[2],
     }
 
     return jsonify(result)
