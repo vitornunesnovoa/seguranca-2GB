@@ -37,7 +37,7 @@ def json_to_cvss_string(json_data):
     try:
         validate_input(json_data)
     except ValueError as e:
-        return str(e)
+        raise ValueError(e)
 
     mapping = {
         "attackVector": "AV",
