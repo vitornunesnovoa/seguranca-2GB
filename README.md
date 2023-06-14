@@ -11,6 +11,6 @@ Integração simples em aplicativos web ou sistemas existentes.
 
 Observações:
 
-- precisa instalar as bibliotecas flask e cvss
+- Precisa instalar as bibliotecas flask e cvss;
 
-- pip install cvss flask  pyopenssl
+- Comando do terminal para instalação de bibliotecas necessárias: "pip install cvss flask  pyopenssl";
