@@ -1,5 +1,6 @@
 
 def validate_input(json_data):
+    # Dicionário que contém os valores válidos para cada chave do JSON
     valid_values = {
         "attackVector": ["N", "A", "L", "P"],
         "attackComplexity": ["L", "H"],
@@ -24,7 +25,7 @@ def validate_input(json_data):
         "modifiedIntegrity": ["X", "N", "L", "H"],
         "modifiedAvailability": ["X", "N", "L", "H"]
     }
-
+    # Verifica se as chaves e valores do JSON estão de acordo com os valores válidos
     for key, value in json_data.items():
         if key not in valid_values:
             raise ValueError(f"Invalid key: {key}")
@@ -35,10 +36,11 @@ def validate_input(json_data):
 
 def json_to_cvss_string(json_data):
     try:
+        # Chama a função validate_input() para validar o JSON
         validate_input(json_data)
     except ValueError as e:
         raise ValueError(e)
-
+    # Chama a função validate_input() para validar o JSON
     mapping = {
         "attackVector": "AV",
         "attackComplexity": "AC",
@@ -63,12 +65,14 @@ def json_to_cvss_string(json_data):
         "modifiedIntegrity": "MI",
         "modifiedAvailability": "MA"
     }
-
+    # Cria a string CVSS inicial com a versão 3.0
     cvss_string = "CVSS:3.0/"
-
+    # Itera sobre as chaves e valores do JSON
     for key, value in json_data.items():
         key_prefix = mapping.get(key)
+        # Verifica se a chave possui um prefixo mapeado e se o valor não é vazio
         if key_prefix and value:
+            # Adiciona o prefixo e valor à string CVSS
             cvss_string += f"{key_prefix}:{value}/"
-
+    # Adiciona o prefixo e valor à string CVSS
     return cvss_string.rstrip("/")
